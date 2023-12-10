@@ -1,1 +1,164 @@
-<p>signup works!</p>
+<div class="login-container">
+  <div class="top-bar">
+    <div class="black-bar">
+      <p class="black-bar-text">SUMMER DISCOUNT BUY 2 GET 1 FREE</p>
+    </div>
+    <div class="white-bar">
+      <div class="white-bar-container">
+        <div class="logo-container">
+          <img src="../../assets/logo.svg" alt="Logo" class="logo" />
+        </div>
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Summer Presets"
+            class="search-field"
+          />
+          <button class="search-button">Search</button>
+        </div>
+        <div class="navigation">
+          <div class="nav-labels">
+            <span>SHOP</span>
+            <span>PRESETIA+</span>
+            <span>ABOUT US</span>
+          </div>
+          <div class="user-icons">
+            <mat-icon>perm_identity</mat-icon>
+            <mat-icon>add_shopping_cart</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content-container">
+      <div class="text-section">
+        <h1>Sign up :)</h1>
+
+        <h2 class="sub-heading">Enter your details</h2>
+        <input type="text" placeholder="Username" />
+        <input type="email" placeholder="Email" />
+        <div class="password-input">
+          <input type="password" placeholder="Password" />
+          <p class="password-tip">
+            Use 8 or more characters with a mix of letters, numbers and symbols.
+          </p>
+        </div>
+
+        <mat-checkbox class="my-checkbox"
+          >Send me tips, trends, freebies, updates & offers. (You can
+          unsubscribe at any time.)</mat-checkbox
+        >
+        <div class="action-button">
+          <button
+            class="signup-button"
+            (click)="signMeUp()"
+            [disabled]="loading"
+          >
+            <span *ngIf="!loading">Sign up</span>
+            <span *ngIf="loading" class="spinner"></span>
+          </button>
+          <div class="auth-buttons">
+            <img
+              class="auth-button"
+              src="../../assets/icons/apple.svg"
+              alt="apple"
+            />
+
+            <img
+              class="auth-button facebook"
+              style="padding: 5px 10px"
+              src="../../assets/icons/facebook.svg"
+              alt="Facebook"
+            />
+            <img
+              class="auth-button"
+              src="../../assets/icons/google.svg"
+              alt="google"
+            />
+          </div>
+        </div>
+
+        <div class="create-account">
+          <p class="new-here">
+            Already have an account? <a href="/login">Login here</a>
+          </p>
+          <hr class="line" />
+          <p class="term-condition">
+            Presetia collects and uses personal data in accordance with our
+            <a href="">Privacy Policy</a>. By creating an account, you agree to
+            our
+            <a href="">Terms and Conditions.</a>
+          </p>
+        </div>
+      </div>
+      <div class="image-section">
+        <img src="../../assets/girl-with-camera.svg" alt="Background Image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-row-one">
+        <div class="footer-section one">
+          <h3>Preseta</h3>
+          <p>
+            Maecenas quam nulla, hendrerit pellentesque quam eget, ullamcorper
+            faucibus mi. Integer gravida nibh augue, a sagittis odio suscipit
+            egestas.
+          </p>
+        </div>
+        <div class="footer-section two">
+          <p class="heading">Company</p>
+          <p>Homepage</p>
+          <p>Our Portfolio</p>
+          <p>About Us</p>
+          <p>Get In Touch</p>
+        </div>
+
+        <div class="footer-section three">
+          <p class="heading">Company</p>
+          <p>Homepage</p>
+          <p>Our Portfolio</p>
+          <p>About Us</p>
+          <p>Get In Touch</p>
+        </div>
+
+        <div class="footer-section four">
+          <p class="heading">Company</p>
+          <p>Homepage</p>
+          <p>Our Portfolio</p>
+          <p>About Us</p>
+          <p>Get In Touch</p>
+        </div>
+
+        <div class="footer-section five">
+          <h3>Subscribe to our Newsletter</h3>
+          <input type="email" placeholder="Janique@gmail.com" />
+          <p>You can unsubscribe anytime.</p>
+          <button class="subscribe-button">Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-row-second">
+        <div class="footer-section one">
+          <div class="social-icons">
+            <img src="../../assets/icons/facebook.svg" alt="Facebook" />
+            <img src="../../assets/icons/twitter.svg" alt="Twitter" />
+            <img src="../../assets/icons/instagram.svg" alt="Instagram" />
+          </div>
+        </div>
+        <div class="footer-section two">
+          <div class="payment-icons">
+            <img
+              src="../../assets/icons/payment-method.svg"
+              alt="patment-methods"
+            />
+          </div>
+          <p>Copyright &copy; 2022. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
