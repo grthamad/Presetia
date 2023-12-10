@@ -48,7 +48,7 @@
           (blur)="updateLabel()"
           (click)="updatevalue()"
         />
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Password" [(ngModel)]="password" />
         <div class="action-button">
           <button class="login-button" (click)="loginMe()" [disabled]="loading">
             <span *ngIf="!loading">Login</span>

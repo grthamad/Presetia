@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../shared/services/auth.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   enteredName = 'Name';
-  loading = false;
+  loading: boolean = false;
+  password: string = '';
+
+  constructor(private authService: AuthService) {}
 
   updateLabel() {
     this.enteredName = this.enteredName.trim();
@@ -16,11 +21,20 @@ export class LoginComponent {
     this.enteredName = '';
   }
 
-  loginMe() {
+  loginMe(): void {
     this.loading = true;
-
-    setTimeout(() => {
-      this.loading = false;
-    }, 5000);
+    this.authService
+      .login(this.enteredName, this.password)
+      .pipe(take(1))
+      .subscribe({
+        next: (res) => {
+          console.log('Login successful', res);
+          this.loading = false;
+        },
+        error: (err) => {
+          console.error('Login error', err);
+          this.loading = false;
+        },
+      });
   }
 }

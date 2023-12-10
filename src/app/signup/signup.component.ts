@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { AuthService } from '../shared/services/auth.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -6,13 +8,27 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrl: './signup.component.scss',
 })
 export class SignupComponent {
-  loading = false;
+  loading: boolean = false;
+  username: string = '';
+  email: string = '';
+  password: string = '';
 
-  signMeUp() {
+  constructor(private authService: AuthService) {}
+
+  signMeUp(): void {
     this.loading = true;
-
-    setTimeout(() => {
-      this.loading = false;
-    }, 5000);
+    this.authService
+      .signup(this.username, this.email, this.password)
+      .pipe(take(1))
+      .subscribe({
+        next: (res) => {
+          console.log('Signup successful', res);
+          this.loading = false;
+        },
+        error: (err) => {
+          console.error('Signup error', err);
+          this.loading = false;
+        },
+      });
   }
 }
