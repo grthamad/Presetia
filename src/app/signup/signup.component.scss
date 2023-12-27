@@ -366,4 +366,89 @@
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    .top-bar {
+      flex-direction: column;
+      .black-bar,
+      .white-bar {
+        flex-direction: row;
+        text-align: center;
+      }
+
+      .white-bar-container {
+        flex-direction: column;
+        .search-container {
+          display: none;
+        }
+      }
+    }
+
+    .content {
+      .content-container {
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+
+        .image-section img {
+          width: 200px;
+        }
+
+        .text-section {
+          width: 250px;
+          margin-top: 20px;
+          h1 {
+            font-size: 35px;
+          }
+          h2.sub-heading {
+            font-size: 15px;
+          }
+          .action-button {
+            flex-direction: column;
+            .signup-button {
+              width: 50%;
+            }
+          }
+          .my-checkbox {
+            display: none;
+          }
+          .password-input {
+            .password-tip {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      .footer-content {
+        .footer-row-one {
+          width: 100%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .footer-section.five {
+            .subscribe-button {
+              margin: 10% 0%;
+              width: 100%;
+            }
+            h3 {
+              font-size: 17px;
+            }
+            input {
+              width: 100%;
+            }
+            p {
+              display: none;
+            }
+          }
+        }
+        .footer-row-second {
+          width: 100%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
